@@ -1,0 +1,6 @@
+{
+  "name": "Nextjs Sample App",
+  "description": "A nextjs open source Todo app that implements HostedHooks",
+  "repository": "https://github.com/HostedHooks/nextjs-sample-app",
+  "keywords": ["hostedhooks", "webhooks", "nextjs"]
+}
