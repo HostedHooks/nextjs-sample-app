@@ -83,7 +83,7 @@ Your app is now running at http://localhost:3000, create a new todo and open you
 
 You can deploy your own copy of this app using Heroku button:
 
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://dashboard.heroku.com/)
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://www.heroku.com/deploy/?template=https://github.com/HostedHooks/nextjs-sample-app)
 
 ## Documentation
 
