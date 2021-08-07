@@ -1,6 +1,6 @@
 # A HostedHooks todo app sample using nextjs
 
-This example shows how to integrate [HostedHooks](https://docs.hostedhooks.com/getting-started/what-is-hosted-hooks) with react-based applications and send webhooks out for specific events that are triggered within these applications
+This example shows how to integrate [HostedHooks](https://docs.hostedhooks.com/getting-started/what-is-hosted-hooks) with react-based application and send webhooks out for specific events that are triggered within it.
 
 ## How to use
 
@@ -20,7 +20,7 @@ First, [create an accout on hostedhooks](https://hostedhooks.com/sign_up).
 
 After creating your accout, you need to [generate a new app](https://docs.hostedhooks.com/getting-started/webhooks/setup-your-app#1-generate-an-app) where events are occurring and you want to notify your subscribers of.
 
-### Step 3. Create a Webhook Event for your app instance.
+### Step 3. Create a Webhook Event for your app instance
 
 Next, go to your app and create a [Webhook Event](https://docs.hostedhooks.com/developer-resources/components/webhook-events) for your app that subscribers can subscribe to. 
 
