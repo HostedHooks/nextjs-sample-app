@@ -14,7 +14,7 @@ cd nextjs_sample_app
 
 ### Step 1. Create an account on hostedhooks
 
-First, [create an accout on hostedhooks](https://hostedhooks.com/sign_up).
+First, [create an account on hostedhooks](https://hostedhooks.com/sign_up).
 
 ### Step 2. Generate an app for your webhooks
 
@@ -22,10 +22,10 @@ After creating your accout, you need to [generate a new app](https://docs.hosted
 
 ### Step 3. Create a Webhook Event for your app instance
 
-Next, go to your app and create a [Webhook Event](https://docs.hostedhooks.com/developer-resources/components/webhook-events) for your app that subscribers can subscribe to. 
+Next, go to your app and create a [Webhook Event](https://docs.hostedhooks.com/developer-resources/components/webhook-events) for your app that subscribers can subscribe to.
 
 
-In this example, we set 4 events based on normal todo app functionalities:
+In this example, we created 4 events based on a traditional todo app:
 
 - `todo.created` - triggered whenever a new todo is **created**.
 - `todo.completed` - triggered whenever a todo is **completed**.
@@ -67,14 +67,28 @@ yarn install
 yarn dev
 ```
 
-Your app is now running at http://localhost:3000, create a new todo and open your devtools to see the message. 
+Your app is now running at http://localhost:3000, create a new todo and open your devtools to see the message.
 
-## Deploying to Heroku
 
-You can deploy your own copy of this app using Heroku button:
+## Deploying
+
+### Deploying to Heroku
+
+You can deploy your own copy of this app using the Heroku button below:
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://www.heroku.com/deploy/?template=https://github.com/HostedHooks/nextjs-sample-app)
+
+
+### Deploy To Vercel
+
+You can deploy your own copy of this app using the Vercel button below:
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FHostedHooks%2Fnextjs-sample-app&env=NEXT_PUBLIC_HOSTEDHOOKS_API_KEY,NEXT_PUBLIC_APP_UUID&envDescription=API%20key%20is%20needed%20to%20send%20requests%20to%20HostedHooks%20and%20App%20UUID%20is%20your%20application%20on%20the%20HostedHooks%20platform&envLink=https%3A%2F%2Fdocs.hostedhooks.com%2Fgetting-started%2Fwebhooks%2Fintegrate-with-your-app)
 
 ## Documentation
 
 For more information about using Hostedhooks, check out [documentation](https://docs.hostedhooks.com/).
+
+## Support
+
+If you have any questions please reach out to support@hostedhooks.com
