@@ -1,6 +1,6 @@
-# A HostedHooks todo app sample using nextjs
+# A HostedHooks Sample To-Do app using Next.js
 
-This example shows how to integrate [HostedHooks](https://docs.hostedhooks.com/getting-started/what-is-hosted-hooks) with react-based application and send webhooks out for specific events that are triggered within it.
+This example app shows how to integrate [HostedHooks](https://www.hostedhooks.com) with a react-based Next.js application to send webhooks when events are triggered.
 
 ## How to use
 
