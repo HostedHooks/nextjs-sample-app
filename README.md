@@ -2,6 +2,10 @@
 
 This example app shows how to integrate [HostedHooks](https://www.hostedhooks.com) with a react-based Next.js application to send webhooks when events are triggered.
 
+## Demo
+
+### [https://nextjs-hostedhooks-demo.herokuapp.com/](https://nextjs-hostedhooks-demo.herokuapp.com/)
+
 ## How to use
 
 ```bash
@@ -24,7 +28,6 @@ After creating your accout, you need to [generate a new app](https://docs.hosted
 
 Next, go to your app and create a [Webhook Event](https://docs.hostedhooks.com/developer-resources/components/webhook-events) for your app that subscribers can subscribe to.
 
-
 In this example, we created 4 events based on a traditional todo app:
 
 - `todo.created` - triggered whenever a new todo is **created**.
@@ -32,7 +35,7 @@ In this example, we created 4 events based on a traditional todo app:
 - `todo.uncompleted` - triggered whenever a todo is **uncompleted**.
 - `todo.deleted` - triggered whenever a todo is **deleted**.
 
-**Note:** The events sending out from your application must match the event created in your app instance [app instance](https://docs.hostedhooks.com/developer-resources/components/apps).
+**Note:** The events sending out from your application must match the events created in your [app instance](https://docs.hostedhooks.com/developer-resources/components/apps).
 
 ### Step 4. Set up environment variables
 
@@ -43,6 +46,7 @@ cp .env.local.example .env.local
 ```
 
 Then set each variable on `.env.local`:
+
 - `NEXT_PUBLIC_HOSTEDHOOKS_API_KEY` must be the **API Key** from your [account settings](https://www.hostedhooks.com/settings/account).
 - `NEXT_PUBLIC_APP_UUID` must be the **ID** of your app instance.
 
@@ -55,7 +59,7 @@ NEXT_PUBLIC_APP_UUID=...
 
 **Note:** These environment variables must be prefixed by `NEXT_PUBLIC_` as they will be exposed and run in the browser ([Documentation](https://nextjs.org/docs/basic-features/environment-variables#exposing-environment-variables-to-the-browser)).
 
-### Step 6. Run Next.js in development mode
+### Step 5. Running in development mode
 
 ```bash
 npm install
@@ -67,17 +71,75 @@ yarn install
 yarn dev
 ```
 
-Your app is now running at http://localhost:3000, create a new todo and open your devtools to see the message.
+Your app is now running at http://localhost:3000.
 
+#### Triggering an event:
+
+When your app triggers an event, you can send a webhook message by calling your webhook function:
+
+```js
+const handleOnDeleteTodoClick = (id) => {
+  // deleting todo locally, you may want to call an API
+  const todo = deleteTodo(id);
+
+  // you can pass in whatever data you want to send with the event
+  sendWebhookMessage('todo.deleted', todo);
+};
+```
+
+#### Building your webhook message:
+
+In your webhook message, you can form the `data` object as you want:
+
+```js
+export default function sendWebhookMessage(event, todo) {
+  var url = new URL(`https://www.hostedhooks.com/api/v1/apps/${process.env.NEXT_PUBLIC_APP_UUID}/messages`);
+
+  // message headers
+  var myHeaders = new Headers();
+  myHeaders.append('Authorization', `Bearer ${process.env.NEXT_PUBLIC_HOSTEDHOOKS_API_KEY}`);
+  myHeaders.append('Content-Type', 'application/json');
+
+  // data to be sent with an event, ex: user session data
+  const user = {
+    id: 'user_id',
+    role: 'team_manager',
+  };
+
+  // webhook message
+  var messagePayload = JSON.stringify({
+    data: {
+      user: user,
+      todo: todo, // todo data
+    },
+    version: '1.0',
+    event_type: event, // `todo.deleted`
+  });
+
+  var requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: messagePayload,
+    redirect: 'follow',
+  };
+
+  fetch(url, requestOptions)
+    .then((response) => response.text())
+    .then((result) => console.log(result))
+    .catch((error) => console.error(error));
+}
+```
+Now your app is ready to go, delete or create a new todo, and open your devtools to see the result.
+
+You should get a `201 Created` success status response code which indicates that your webhook message has been sent, and your subscribers has been notified.
 
 ## Deploying
 
-### Deploying to Heroku
+### Deploy to Heroku
 
 You can deploy your own copy of this app using the Heroku button below:
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://www.heroku.com/deploy/?template=https://github.com/HostedHooks/nextjs-sample-app)
-
 
 ### Deploy To Vercel
 
