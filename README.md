@@ -93,7 +93,9 @@ In your webhook message, you can form the `data` object as you want:
 
 ```js
 export default function sendWebhookMessage(event, todo) {
-  var url = new URL(`https://www.hostedhooks.com/api/v1/apps/${process.env.NEXT_PUBLIC_APP_UUID}/messages`);
+  var url = new URL(
+    `https://www.hostedhooks.com/api/v1/apps/${process.env.NEXT_PUBLIC_APP_UUID}/messages`
+  );
 
   // message headers
   var myHeaders = new Headers();
@@ -129,6 +131,7 @@ export default function sendWebhookMessage(event, todo) {
     .catch((error) => console.error(error));
 }
 ```
+
 Now your app is ready to go, delete or create a new todo, and open your devtools to see the result.
 
 You should get a `201 Created` success status response code which indicates that your webhook message has been sent, and your subscribers has been notified.
