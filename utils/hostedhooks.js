@@ -1,5 +1,7 @@
 export default function sendWebhookMessage(event, todo) {
-  var url = new URL(`https://www.hostedhooks.com/api/v1/apps/${process.env.NEXT_PUBLIC_APP_UUID}/messages`);
+  var url = new URL(
+    `https://www.hostedhooks.com/api/v1/apps/${process.env.NEXT_PUBLIC_APP_UUID}/messages`
+  );
 
   var myHeaders = new Headers();
   myHeaders.append('Authorization', `Bearer ${process.env.NEXT_PUBLIC_HOSTEDHOOKS_API_KEY}`);
