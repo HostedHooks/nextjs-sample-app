@@ -6,20 +6,6 @@ This example app shows how to integrate [HostedHooks](https://www.hostedhooks.co
 
 ### [https://nextjs-hostedhooks-demo.herokuapp.com/](https://nextjs-hostedhooks-demo.herokuapp.com/)
 
-## Deploying
-
-### Deploy to Heroku
-
-You can deploy your own copy of this app using the Heroku button below:
-
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://www.heroku.com/deploy/?template=https://github.com/HostedHooks/nextjs-sample-app)
-
-### Deploy To Vercel
-
-You can deploy your own copy of this app using the Vercel button below:
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FHostedHooks%2Fnextjs-sample-app&env=NEXT_PUBLIC_HOSTEDHOOKS_API_KEY,NEXT_PUBLIC_APP_UUID&envDescription=API%20key%20is%20needed%20to%20send%20requests%20to%20HostedHooks%20and%20App%20UUID%20is%20your%20application%20on%20the%20HostedHooks%20platform&envLink=https%3A%2F%2Fdocs.hostedhooks.com%2Fgetting-started%2Fwebhooks%2Fintegrate-with-your-app)
-
 ## How to use
 
 ```bash
@@ -149,6 +135,20 @@ export default function sendWebhookMessage(event, todo) {
 Now your app is ready to go, delete or create a new todo, and open your devtools to see the result.
 
 You should get a `201 Created` success status response code which indicates that your webhook message has been sent, and your subscribers has been notified.
+
+## Deploying
+
+### Deploy to Heroku
+
+You can deploy your own copy of this app using the Heroku button below:
+
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://www.heroku.com/deploy/?template=https://github.com/HostedHooks/nextjs-sample-app)
+
+### Deploy To Vercel
+
+You can deploy your own copy of this app using the Vercel button below:
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FHostedHooks%2Fnextjs-sample-app&env=NEXT_PUBLIC_HOSTEDHOOKS_API_KEY,NEXT_PUBLIC_APP_UUID&envDescription=API%20key%20is%20needed%20to%20send%20requests%20to%20HostedHooks%20and%20App%20UUID%20is%20your%20application%20on%20the%20HostedHooks%20platform&envLink=https%3A%2F%2Fdocs.hostedhooks.com%2Fgetting-started%2Fwebhooks%2Fintegrate-with-your-app)
 
 ## Documentation
 
