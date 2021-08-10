@@ -36,7 +36,7 @@ First, [create an account on hostedhooks](https://hostedhooks.com/sign_up).
 
 ### Step 2. Generate an app for your webhooks
 
-After creating your accout, you need to [generate a new app](https://docs.hostedhooks.com/getting-started/webhooks/setup-your-app#1-generate-an-app) where events are occurring and you want to notify your subscribers of.
+After creating your account, you need to [generate a new app](https://docs.hostedhooks.com/getting-started/webhooks/setup-your-app#1-generate-an-app) where events will occur. This app is what your webhook subscribers will be subscribing to. 
 
 ### Step 3. Create a Webhook Event for your app instance
 
@@ -49,7 +49,7 @@ In this example, we created 4 events based on a traditional todo app:
 - `todo.uncompleted` - triggered whenever a todo is **uncompleted**.
 - `todo.deleted` - triggered whenever a todo is **deleted**.
 
-**Note:** The events sending out from your application must match the events created in your [app instance](https://docs.hostedhooks.com/developer-resources/components/apps).
+**Note:** The events being sent from your application must match the events created in your [app instance](https://docs.hostedhooks.com/developer-resources/components/apps) and they must be created first.
 
 ### Step 4. Set up environment variables
 
