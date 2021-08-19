@@ -152,7 +152,7 @@ You can deploy your own copy of this app using the Vercel button below:
 
 ## Documentation
 
-For more information about using Hostedhooks, check out [documentation](https://docs.hostedhooks.com/).
+For more information about using Hostedhooks, check out our [documentation](https://docs.hostedhooks.com/).
 
 ## Support
 
